@@ -1,0 +1,27 @@
+{
+    "name": "Getting Started Example",
+    "description": "Build an Extension!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [ "verified.png", "notverified.png" ],
+            "matches": [ "<all_urls>" ]
+        }
+    ],
+    "content_scripts":[
+        {
+            "matches": ["https://www.twitch.tv/*"],
+            "js": ["popup.js"]
+        }
+        
+    ],
+    "permissions": [
+        "identity",
+        "tabs",
+        "activeTab"
+    ]
+}
